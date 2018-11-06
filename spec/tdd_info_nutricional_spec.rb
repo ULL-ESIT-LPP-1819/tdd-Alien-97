@@ -12,7 +12,7 @@ end
 #no puede haber mas de un RSpec en describe's anidados, puedes tener varios describe's mientras sean independientes
 RSpec.describe Tdd_valor_nutricional do
   before:each do
-    @producto1=Tdd_valor_nutricional.new("50 g","10 g")
+    @producto1=Tdd_valor_nutricional.new("50 g","10 g", "5 g")
   end
 
 
@@ -27,6 +27,10 @@ RSpec.describe Tdd_valor_nutricional do
     it "le paso parametro" do
 	   
 	   expect(@producto1.azucares).to eq("10 g")
+    end
+  describe "tercer atributo "
+    it "le paso un tercer atributo, las proteinas" do
+	   expect(@producto1.proteinas).to eq("5 g")
     end
   end
 end

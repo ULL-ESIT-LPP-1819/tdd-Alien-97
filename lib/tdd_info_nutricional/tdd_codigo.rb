@@ -1,7 +1,7 @@
 #codigo valoracion nutricional
 
 class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
-	attr_reader:g_saturadas,:azucares
+	attr_reader:g_saturadas,:azucares,proteinas
 
 	def initialize(g_saturadas, azucares)
 		@g_saturadas=g_saturadas
