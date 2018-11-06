@@ -4,7 +4,7 @@ RSpec.describe TddInfoNutricional do
   end
 
   it "does something useful" do
-    expect(true).to eq(false)
+    expect(true).to eq(true)
   end
 end
 
@@ -19,12 +19,12 @@ RSpec.describe Tdd_valor_nutricional do
       
   #el it va dentro de otro describe, y ahi es donde te salta el error
   describe "le estoy pasando cantidad de grasa " do   
-    it "le paso un atributo que no tiene y falla"do
+    it "le paso un atributo que no tiene(grasas saturadas) y falla"do
 	   expect(@producto1.g_saturadas).to eq("50 g")
     end
   end
 
-  describe "Segunda prueba: le paso un segundo parametro " do
+  describe "Segunda prueba: le paso un segundo parametro,cantidad de azucares " do
     it "le paso parametro" do
 	   
 	   expect(@producto1.azucares).to eq("10 g")
