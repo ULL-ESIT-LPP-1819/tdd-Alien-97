@@ -43,4 +43,10 @@ RSpec.describe Tdd_valor_nutricional do
     end
   end
 
+  describe " Prueba para el metodo de calculo del valor energetico"do
+    it "prueba primer metodo"do
+	    Tdd_valor_nutricional.valor_energetico("la energia es igual mc^2").should == 300
+    end
+  end
+
 end
