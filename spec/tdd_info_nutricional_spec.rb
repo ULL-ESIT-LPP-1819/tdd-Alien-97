@@ -4,7 +4,7 @@ RSpec.describe TddInfoNutricional do
   end
 
   it "does something useful" do
-    expect(true).to eq(true)
+    expect(true).to eq(false)
   end
 end
 
@@ -12,7 +12,7 @@ end
 #no puede haber mas de un RSpec en describe's anidados, puedes tener varios describe's mientras sean independientes
 RSpec.describe Tdd_valor_nutricional do
   before:each do
-    @producto1=Tdd_valor_nutricional.new("50 g","10 g", "5 g")
+    @producto1=Tdd_valor_nutricional.new("50 g","10 g", "5 g", "1 g")
   end
 
 
@@ -22,15 +22,25 @@ RSpec.describe Tdd_valor_nutricional do
     it "le paso un atributo que no tiene y falla"do
 	   expect(@producto1.g_saturadas).to eq("50 g")
     end
+  end
 
-  describe "Segunda prueba: le paso un segundo parametro "
+  describe "Segunda prueba: le paso un segundo parametro " do
     it "le paso parametro" do
 	   
 	   expect(@producto1.azucares).to eq("10 g")
     end
-  describe "tercer atributo "
+  end
+  describe "tercer atributo "do
     it "le paso un tercer atributo, las proteinas" do
 	   expect(@producto1.proteinas).to eq("5 g")
     end
   end
+  
+
+  describe "cuarto atributo"do
+    it "le paso un cuarto atributo, la sal" do
+	   expect(@producto1.sal).to eq("1 g")
+    end
+  end
+
 end
