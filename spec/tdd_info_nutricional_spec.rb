@@ -25,7 +25,7 @@ RSpec.describe Tdd_valor_nutricional do
 
   describe "Segunda prueba: le paso un segundo parametro "
     it "le paso parametro" do
-	  
+	   
 	   expect(@producto1.azucares).to eq("10 g")
     end
   end
