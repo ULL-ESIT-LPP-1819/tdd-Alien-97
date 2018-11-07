@@ -29,5 +29,19 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
 		#PUTS DEVUELVE NIL,CUIDADO
 
 	end
+	def valor_energetico_kj()
+                v1=[@g_saturadas,@azucares,@proteinas,@sal, @fib_alimentaria]
+                v2=[37,17,8,17,25]
+                i=0
+                result=0 #siempre hay que inicializar variables
+                while i <v1.length and i <v2.length do
+                        result+=(v1[i]*v2[i])
+                        i+=1 #asi se incrementan iteradores en ruby
+                end
+                "El valor energetico en kilojulios es #{result}"# info: operador concatenacion en Ruby es +, para que imprima varios strings
+                #PUTS DEVUELVE NIL,CUIDADO
+
+        end
+
 end
 
