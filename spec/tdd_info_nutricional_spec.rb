@@ -50,8 +50,14 @@ RSpec.describe Tdd_valor_nutricional do
     end
 
     it "prueba primer metodo"do
-	    expect(@producto1.valor_energetico_kcal).to eq("El valor energetico en kilocalorias es 522")
+	   expect(@producto1.valor_energetico_kcal).to eq("El valor energetico en kilocalorias es 522")
     end
   end
 
+  describe "Prueba para el metodo de calculo del valor energetico en kilojulios"do
+    it "valor_nutricional en kj"do
+  	   expect(@producto1.valor_energetico_kj).to eq("en kj es 500")
+    end
+  end
+   
 end
