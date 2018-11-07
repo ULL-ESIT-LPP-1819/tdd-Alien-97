@@ -2,7 +2,7 @@
 
 Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/tdd_info_nutricional`. To experiment with that code, run `bin/console` for an interactive prompt.
 
-TODO: <h1>PRÁCTICA6:TEST DRIVEN DEVELEPMENT</h1>
+TODO: <h1>PRÁCTICA6:TEST DRIVEN DEVELOPMENT</h1>
 
 Título de la práctica: prct6: DESARROLLO DIRIGIDO POR PRUEBAS, CLASE VALORACION NUTRICIONAL 
    *Autor: ALIEN EMBAREC RIADI
