@@ -64,12 +64,14 @@ end
 
 RSpec.describe Double_linked_list do
    before:each do 
-	@dll_list1=Double_linked_list.new(50)
+	@dll_list1=Double_linked_list.new()
 	    
    end
    describe "pruebas lista"do
      it " primera prueba "do
-	  expect(@dll_list1.sal).to eq(1)
+	  @dll_list1.insertar_head(50)    	 
+	   expect(@dll_list1.cabeza).to eq(50)
      end		
    end
+  
 end
