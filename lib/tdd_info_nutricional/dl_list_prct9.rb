@@ -1,11 +1,11 @@
- Nodo = Struct.new(:value, :next, :prev)
+ Node = Struct.new(:value, :next, :prev)
     
    class Dll
       include Comparable, Enumerable
       attr_reader :head,:tail,:size
       def initialize()
    
-          @head=Nodo.new
+          @head=Node.new
           @head.value=nil
           @head.next=nil
           @head.prev=nil
@@ -15,12 +15,12 @@
   
      def insertar_head(data)
           if @head.value == nil then
-                  @head.valor=data
-                  @tail=@cabeza
+                  @head.value=data
+                  @tail=@head
                   @size+=1
           else
-                  aux=Nodo.new
-                  aux.valor=data
+                  aux=Node.new
+                  aux.value=data
                   aux.prev=nil
                   aux.next=@head
                   @head.prev=aux
