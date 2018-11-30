@@ -70,8 +70,20 @@ RSpec.describe Double_linked_list do
    describe "pruebas lista"do
      it " primera prueba "do
 	  @dll_list1.insertar_head(50)    	 
-	   expect(@dll_list1.cabeza).to eq(50)
+	   expect(@dll_list1.cabeza.valor).to eq(50)
      end		
    end
   
+end
+RSpec.describe Dll do 
+  before:each do
+	@etiqueta = Dll.new()
+  end
+  
+  describe "prueba1"do
+     it"prueba1"do
+	 @etiqueta.insertar_head(60)
+	  expect(@etiqueta.cabeza.valor).to eq (60)
+     end
+  end
 end
