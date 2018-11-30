@@ -82,8 +82,15 @@ RSpec.describe Dll do
   
   describe "prueba1"do
      it"prueba1"do
-	 @etiqueta.insertar_head(60)
+	 @etiqueta.insert_head(60)
 	  expect(@etiqueta.head.value).to eq (60)
+     end
+  end
+  
+  describe "prueba2"do
+     it"prueba2"do 
+	@etiqueta.insert_tail(80)
+	  expect(@etiqueta.cola.value).to eq (80)
      end
   end
 end

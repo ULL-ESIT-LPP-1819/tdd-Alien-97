@@ -13,7 +13,7 @@
           @size=0
      end
   
-     def insertar_head(data)
+     def insert_head(data)
           if @head.value == nil then
                   @head.value=data
                   @tail=@head
@@ -28,6 +28,23 @@
                   @size+=1
           end
      end
+     
+     def insert_tail(data)
+	  if @head.value == nil then
+		@tail.value=data
+		@head=@tail
+		@size+=1
+	  else
+		aux=Node.new
+		aux.value=data
+		aux.prev=@tail
+		aux.next=nil
+		@tail.next=aux
+		@tail=aux
+		@size+=1
+	  end
+    end
+		
   
   
   end
