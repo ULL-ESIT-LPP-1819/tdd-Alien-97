@@ -90,7 +90,7 @@ RSpec.describe Dll do
   describe "prueba2"do
      it"prueba2"do 
 	@etiqueta.insert_tail(80)
-	  expect(@etiqueta.cola.value).to eq (80)
+	  expect(@etiqueta.tail.value).to eq (80)
      end
   end
 end
