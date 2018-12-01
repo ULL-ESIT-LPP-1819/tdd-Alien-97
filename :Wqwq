@@ -96,14 +96,8 @@ RSpec.describe Dll do
   
   describe "prueba3"do
      it"prueba3"do
-	  
+	  expect(@etiqueta.head.value).to eq (60)
 	  expect(@etiqueta.empty()).to eq (false)
-     end
-  end
-  
-  describe "prueba4"do
-     it"prueba4"do
-	 expect(@etiqueta.to_s()).to eq("[60]<->[80]")
      end
   end
 end
