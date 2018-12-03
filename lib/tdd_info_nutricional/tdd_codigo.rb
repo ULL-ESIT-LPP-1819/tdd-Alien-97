@@ -44,7 +44,7 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
         end
 
 	def == (other)
-       		if other.instance_of? Dll
+       		if other.instance_of? Tdd_valor_nutricional
          		@g_saturadas == other.g_saturadas
 			@azucares==other.azucares
 			@proteinas == other.proteinas
@@ -61,7 +61,7 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
      	end
   
     	def <=> (other) #usando metodos modulo comparable
-      		return nil unless other.instance_of?Dll
+      		return nil unless other.instance_of?Tdd_valor_nutricional
          		@azucares <=>other.azucares
     	end
 	
