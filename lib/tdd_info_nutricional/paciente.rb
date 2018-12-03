@@ -1,9 +1,9 @@
 class Paciente < Persona
-	attr_accessor :nombre, :apellido, :edad, :sexo,:peso, :talla
+	attr_accessor :datos_antro
 	
-	def initialize(nombre,apellido,edad,sexo,peso,talla)
+	def initialize(datos_antro=nil,cadera,cintura,tricipital)
 		super(nombre)
-		@peso,@talla,@cintura,@cadera,@tricipital,@bicipital,@subescapular,@suprailiaco,@brazo=peso,talla,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo
+		@tricipital,@bicipital,@subescapular,@suprailiaco,@brazo=peso,talla,cintura,cadera,tricipital,bicipital,subescapular,suprailiaco,brazo
 	end
 
 end

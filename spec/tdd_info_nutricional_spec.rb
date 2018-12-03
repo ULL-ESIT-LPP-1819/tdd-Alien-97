@@ -80,7 +80,7 @@ RSpec.describe Tdd_valor_nutricional do
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
 	
-	@persona1 = Persona_datos_antro.new(80,1.80,20,22,34,"18:30","Sí","Sí")
+	@persona1 = Persona_datos_antro.new(80,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20")
   end
   
   describe "prueba1"do
