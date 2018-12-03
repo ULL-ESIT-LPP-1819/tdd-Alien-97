@@ -45,16 +45,16 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
 
 	def == (other)
        		if other.instance_of? Tdd_valor_nutricional
-         		@g_saturadas == other.g_saturadas
+         		#@g_saturadas == other.g_saturadas
 			@azucares==other.azucares
-			@proteinas == other.proteinas
-			@sal == other.sal
-			@fib_alimentaria == other.fib_alimentaria
-			@g_monoinsat == other.monoinsat
-			@g_poliinsat == other.poliinsat
-			@polialcoholes == other.polialcoholes
-			@almidon == other.almidon
-			@vitamina == other.vitamina
+			#@proteinas == other.proteinas
+			#@sal == other.sal
+			#@fib_alimentaria == other.fib_alimentaria
+			#@g_monoinsat == other.g_monoinsat
+			#@g_poliinsat == other.g_poliinsat
+			#@polialcoholes == other.polialcoholes
+			#@almidon == other.almidon
+			#@vitamina == other.vitamina
        		elsif
          		false
        		end

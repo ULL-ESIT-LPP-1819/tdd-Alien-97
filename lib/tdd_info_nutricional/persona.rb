@@ -1,7 +1,8 @@
 class Persona 
-	attr:accessor :nombre
+
+	attr_reader:nombre
 	
-	def initialize(nombre){
+	def initialize(nombre)
 		@nombre=nombre
 	end
 

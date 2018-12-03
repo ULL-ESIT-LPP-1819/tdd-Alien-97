@@ -80,6 +80,7 @@ RSpec.describe Tdd_valor_nutricional do
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
 	
+	@persona1 = Persona_datos_antro.new(80,1.80,20,22,34,"18:30","Sí","Sí")
   end
   
   describe "prueba1"do
@@ -120,8 +121,18 @@ RSpec.describe Tdd_valor_nutricional do
 	expect(@producto2 < @producto1).to eq(true)
      end
   end
+  
+  describe "prueba7"do
+     it"comparando dos valoraciones nutricionales"do
+	expect(@producto1==@producto2).to eq(false)
+     end
+  end 
+  
+  describe "prueba8"do
+     it"imc persona"do
+	expect(@persona1.imc).to eq(24.69)
+     end
+  end  
 
-  
-  
-  
+
 end
