@@ -115,5 +115,13 @@ RSpec.describe Tdd_valor_nutricional do
      end
   end
   
+  describe "prueba6"do
+     it"comparando dos valoraciones nutricionales"do
+	expect(@producto2 < @producto1).to eq(true)
+     end
+  end
+
+  
+  
   
 end
