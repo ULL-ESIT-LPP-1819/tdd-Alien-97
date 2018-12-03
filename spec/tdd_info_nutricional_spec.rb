@@ -65,8 +65,7 @@ end
 RSpec.describe Double_linked_list do
    before:each do 
 	@dll_list1=Double_linked_list.new()
-	    
-   end
+   end	    
    describe "pruebas lista"do
      it " primera prueba "do
 	  @dll_list1.insertar_head(50)    	 
@@ -75,21 +74,24 @@ RSpec.describe Double_linked_list do
    end
   
 end
-RSpec.describe Dll do 
+RSpec.describe Tdd_valor_nutricional do 
   before:all do
-	@etiqueta = Dll.new()
+	@etiqueta= Dll.new()
+	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
+	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
+	
   end
   
   describe "prueba1"do
      it"prueba1"do
-	 @etiqueta.insert_head(60)
+	@etiqueta.insert_head(60)
 	  expect(@etiqueta.head.value).to eq (60)
-     end
+    end
   end
   
   describe "prueba2"do
      it"prueba2"do 
-	@etiqueta.insert_tail(80)
+	@etiqueta.insert_tail( 80)
 	  expect(@etiqueta.tail.value).to eq (80)
      end
   end
@@ -106,4 +108,12 @@ RSpec.describe Dll do
 	 expect(@etiqueta.to_s()).to eq("[60]<->[80]")
      end
   end
+  
+  describe "prueba5"do
+     it"comparando dos valoraciones nutricionales"do
+	expect(@producto1 > @producto2).to eq(true)
+     end
+  end
+  
+  
 end

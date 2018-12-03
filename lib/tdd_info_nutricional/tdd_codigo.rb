@@ -2,7 +2,7 @@
 
 class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
 	attr_reader:g_saturadas,:azucares,:proteinas,:sal, :fib_alimentaria,:g_monoinsat,:g_poliinsat,:polialcoholes,:almidon,:vitamina
-
+	include Comparable,Enumerable
 	def initialize(g_saturadas, azucares,proteinas,sal,fib_alimentaria, g_monoinsat= 5, g_poliinsat =  8, polialcoholes= 3 , almidon=1 ,  vitamina=2 )
 		@g_saturadas=g_saturadas
 		@azucares=azucares
@@ -42,6 +42,29 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
                 #PUTS DEVUELVE NIL,CUIDADO
 
         end
+
+	def == (other)
+       		if other.instance_of? Dll
+         		@g_saturadas == other.g_saturadas
+			@azucares==other.azucares
+			@proteinas == other.proteinas
+			@sal == other.sal
+			@fib_alimentaria == other.fib_alimentaria
+			@g_monoinsat == other.monoinsat
+			@g_poliinsat == other.poliinsat
+			@polialcoholes == other.polialcoholes
+			@almidon == other.almidon
+			@vitamina == other.vitamina
+       		elsif
+         		false
+       		end
+     	end
+  
+    	def <=> (other) #usando metodos modulo comparable
+      		return nil unless other.instance_of?Dll
+         		@azucares <=>other.azucares
+    	end
+	
 
 end
 
