@@ -10,8 +10,10 @@ class Persona_datos_antro
 		(peso/estatura**2).round(2)
 	end
 
-	def write
+	def to_s
+		
 		 "peso:#{@peso},estatura:#{@estatura},edad:#{@edad},cintura:#{@cintura},cadera:#{@cadera},hora:#{@hora},en_ropa_interior:#{@en_ropa_interior},sin_zapatos:#{@sin_zapatos}"
+		
 	end
 	
         

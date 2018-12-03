@@ -132,6 +132,11 @@ RSpec.describe Tdd_valor_nutricional do
      it"imc persona"do
 	expect(@persona1.imc).to eq(24.69)
      end
+  end
+  describe "prueba9"do
+     it"to_s persona_datos_antro"do
+	puts @persona1.to_s
+     end
   end  
 
 
