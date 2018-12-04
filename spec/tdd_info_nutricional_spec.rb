@@ -76,7 +76,7 @@ RSpec.describe Double_linked_list do
 end
 RSpec.describe Tdd_valor_nutricional do 
   before:all do
-	@etiqueta= Dll.new()
+	@lista= Dll.new()
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
 	
@@ -86,32 +86,33 @@ RSpec.describe Tdd_valor_nutricional do
 	@paciente1 = Paciente.new("Pepe",@persona1)
 	@paciente2 = Paciente.new("Manuel",@persona2)
 	@paciente3 = Paciente.new("Maria",@persona3)
+	
   end
   
   describe "prueba1"do
      it"prueba1"do
-	@etiqueta.insert_head(60)
-	  expect(@etiqueta.head.value).to eq (60)
+	@lista.insert_head(60)
+	  expect(@lista.head.value).to eq(60)
     end
   end
   
   describe "prueba2"do
      it"prueba2"do 
-	@etiqueta.insert_tail( 80)
-	  expect(@etiqueta.tail.value).to eq (80)
+	@lista.insert_tail(80)
+	  expect(@lista.tail.value).to eq(80)
      end
   end
   
   describe "prueba3"do
      it"prueba3"do
 	  
-	  expect(@etiqueta.empty()).to eq (false)
+	  expect(@lista.empty()).to eq (false)
      end
   end
   
   describe "prueba4"do
      it"prueba4"do
-	 expect(@etiqueta.to_s()).to eq("[60]<->[80]")
+	 expect(@lista.to_s()).to eq("[60]<->[80]")
      end
   end
   
@@ -156,5 +157,20 @@ RSpec.describe Tdd_valor_nutricional do
       end
   end  
 
+   describe "prueba11"do
+      it"lista: insertando primer paciente"do
+	@lista.insert_tail(@paciente1)
+	expect(@lista.tail.value).to eq(@paciente1)
+      end
+      it"lista: insertando segundo paciente"do
+	@lista.insert_tail(@paciente2)
+	expect(@lista.tail.value).to eq(@paciente2)
+      end
+      it"lista: insertando tercer paciente"do
+	@lista.insert_tail(@paciente3)
+	expect(@lista.tail.value).to eq(@paciente3)
+      end
+   end
 
+	
 end

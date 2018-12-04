@@ -88,5 +88,18 @@
 	end
 	s
    end
+   def each
+	aux=@head
+	while !aux.next.nil?
+	   
+    	   yield aux.value
+	end
+	
+	if !aux.value.nil?
+	   yield aux.value
+	end
+   end
+
+   
    
 end 
