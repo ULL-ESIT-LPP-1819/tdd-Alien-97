@@ -80,7 +80,12 @@ RSpec.describe Tdd_valor_nutricional do
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
 	
-	@persona1 = Persona_datos_antro.new(80,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20")
+	@persona1 = Persona_datos_antro.new(97,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20")
+	@persona2 = Persona_datos_antro.new(124,1.86,33,57,88,"18:45","Sí","No",[33, 22 ,23],[26, 30, 24],[9, 7, 6],[10, 4, 6],"24")
+	@persona3 = Persona_datos_antro.new(130,1.77,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29")
+	@paciente1 = Paciente.new("Pepe",@persona1)
+	@paciente2 = Paciente.new("Manuel",@persona2)
+	@paciente3 = Paciente.new("Maria",@persona3)
   end
   
   describe "prueba1"do
@@ -130,13 +135,25 @@ RSpec.describe Tdd_valor_nutricional do
   
   describe "prueba8"do
      it"imc persona"do
-	expect(@persona1.imc).to eq(24.69)
+	expect(@persona1.imc).to eq(29.94)
      end
   end
   describe "prueba9"do
      it"to_s persona_datos_antro"do
 	puts @persona1.to_s
      end
+  end
+
+  describe "prueba10"do
+      it"Paciente1: Pepe"do
+	  @paciente1.clasifica_obesidad
+      end
+      it"Paciente2: Manuel"do
+	  @paciente2.clasifica_obesidad
+      end
+      it"Paciente3: Maria "do
+	  @paciente3.clasifica_obesidad
+      end
   end  
 
 
