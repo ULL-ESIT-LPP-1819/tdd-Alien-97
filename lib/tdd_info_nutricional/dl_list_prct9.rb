@@ -93,6 +93,7 @@
 	while !aux.next.nil?
 	   
     	   yield aux.value
+	   aux=aux.next
 	end
 	
 	if !aux.value.nil?

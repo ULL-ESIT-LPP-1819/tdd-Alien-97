@@ -63,7 +63,22 @@
   
 </div>
 
-    
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
     
     <!-- Method Quickref -->
 <div id="method-list-section" class="nav-section">
@@ -72,6 +87,12 @@
   <ul class="link-list" role="directory">
     
     <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-clasifica_obesidad">#clasifica_obesidad</a>
     
   </ul>
 </div>
@@ -103,9 +124,9 @@
       </header>
 
       
-      <div id="attribute-i-apellido" class="method-detail">
+      <div id="attribute-i-datos_antro" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">apellido</span><span
+          <span class="method-name">datos_antro</span><span
             class="attribute-access-type">[RW]</span>
         </div>
 
@@ -116,9 +137,9 @@
         </div>
       </div>
       
-      <div id="attribute-i-edad" class="method-detail">
+      <div id="attribute-i-imc_value" class="method-detail">
         <div class="method-heading attribute-method-heading">
-          <span class="method-name">edad</span><span
+          <span class="method-name">imc_value</span><span
             class="attribute-access-type">[RW]</span>
         </div>
 
@@ -132,45 +153,6 @@
       <div id="attribute-i-nombre" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">nombre</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        
-        
-        </div>
-      </div>
-      
-      <div id="attribute-i-peso" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">peso</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        
-        
-        </div>
-      </div>
-      
-      <div id="attribute-i-sexo" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">sexo</span><span
-            class="attribute-access-type">[RW]</span>
-        </div>
-
-        <div class="method-description">
-        
-        
-        
-        </div>
-      </div>
-      
-      <div id="attribute-i-talla" class="method-detail">
-        <div class="method-heading attribute-method-heading">
-          <span class="method-name">talla</span><span
             class="attribute-access-type">[RW]</span>
         </div>
 
@@ -195,7 +177,7 @@
         
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(nombre,apellido,edad,sexo,peso,talla)</span>
+            class="method-args">(nombre,datos_antro=nil,imc_value=nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -216,9 +198,143 @@
           
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 4</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">apellido</span>,<span class="ruby-identifier">edad</span>,<span class="ruby-identifier">sexo</span>,<span class="ruby-identifier">peso</span>,<span class="ruby-identifier">talla</span>)
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">datos_antro</span>=<span class="ruby-keyword">nil</span>,<span class="ruby-identifier">imc_value</span>=<span class="ruby-keyword">nil</span>) <span class="ruby-comment">#Ruby, como en otros lenguajes, las variables por defecto las pones al final</span>
         <span class="ruby-keyword">super</span>(<span class="ruby-identifier">nombre</span>)
-        <span class="ruby-ivar">@peso</span>,<span class="ruby-ivar">@talla</span>,<span class="ruby-ivar">@cintura</span>,<span class="ruby-ivar">@cadera</span>,<span class="ruby-ivar">@tricipital</span>,<span class="ruby-ivar">@bicipital</span>,<span class="ruby-ivar">@subescapular</span>,<span class="ruby-ivar">@suprailiaco</span>,<span class="ruby-ivar">@brazo</span>=<span class="ruby-identifier">peso</span>,<span class="ruby-identifier">talla</span>,<span class="ruby-identifier">cintura</span>,<span class="ruby-identifier">cadera</span>,<span class="ruby-identifier">tricipital</span>,<span class="ruby-identifier">bicipital</span>,<span class="ruby-identifier">subescapular</span>,<span class="ruby-identifier">suprailiaco</span>,<span class="ruby-identifier">brazo</span>
+        <span class="ruby-ivar">@datos_antro</span>=<span class="ruby-identifier">datos_antro</span>
+        <span class="ruby-ivar">@imc_value</span>=<span class="ruby-identifier">imc_value</span>
+                        
+        
+                
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+        <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Paciente</span>
+        <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">imc_value</span> <span class="ruby-comment">#imc_value, sin arroba, porque accedes con el getter del objeto other</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span> (<span class="ruby-identifier">other</span>)
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Paciente</span>
+                <span class="ruby-ivar">@imc_value</span>=<span class="ruby-identifier">other</span>.<span class="ruby-identifier">imc_value</span>
+          <span class="ruby-keyword">elsif</span>
+                  <span class="ruby-keyword">false</span>
+          <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-clasifica_obesidad" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">clasifica_obesidad</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="clasifica_obesidad-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 20</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clasifica_obesidad</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">nil?</span>
+                        <span class="ruby-ivar">@imc_value</span>=<span class="ruby-ivar">@datos_antro</span>.<span class="ruby-identifier">imc</span>
+                        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">25.00</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;</span><span class="ruby-value">30.00</span>  
+                                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">nombre</span>.<span class="ruby-identifier">to_s</span>() <span class="ruby-operator">+</span><span class="ruby-string">&quot;, Paciente con sobrepeso, imc =&quot;</span><span class="ruby-operator">+</span> <span class="ruby-identifier">imc_value</span>.<span class="ruby-identifier">to_s</span>
+                        <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&gt;=</span><span class="ruby-value">30.00</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;</span><span class="ruby-value">35.00</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">nombre</span>.<span class="ruby-identifier">to_s</span>() <span class="ruby-operator">+</span><span class="ruby-string">&quot;, Paciente con obesidad grado 1, imc =&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">imc_value</span>.<span class="ruby-identifier">to_s</span>
+                        <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&gt;=</span><span class="ruby-value">35.00</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;</span><span class="ruby-value">40.00</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">nombre</span>.<span class="ruby-identifier">to_s</span>() <span class="ruby-operator">+</span><span class="ruby-string">&quot;, Paciente con obesidad grado 2, imc =&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">imc_value</span>.<span class="ruby-identifier">to_s</span>
+                        <span class="ruby-keyword">else</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&gt;=</span><span class="ruby-value">40.00</span>
+                                <span class="ruby-identifier">puts</span> <span class="ruby-identifier">nombre</span>.<span class="ruby-identifier">to_s</span>() <span class="ruby-operator">+</span><span class="ruby-string">&quot;, Paciente con obesidad grado 3, imc=&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">imc_value</span>.<span class="ruby-identifier">to_s</span>
+                        <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+        
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+                <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Paciente</span>
+                <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">imc_value</span> <span class="ruby-comment">#imc_value, sin arroba, porque accedes con el getter del objeto other</span>
+        <span class="ruby-keyword">end</span>
+
 <span class="ruby-keyword">end</span></pre>
           </div>
           

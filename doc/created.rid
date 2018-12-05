@@ -1,20 +1,19 @@
-Mon, 03 Dec 2018 17:35:25 +0000
-./lib/tdd_info_nutricional.rb	Thu, 29 Nov 2018 19:38:54 +0000
-./lib/tdd_info_nutricional/persona.rb	Fri, 23 Nov 2018 23:54:54 +0000
-./lib/tdd_info_nutricional/dl_list_prct9.rb	Mon, 03 Dec 2018 17:23:15 +0000
-./lib/tdd_info_nutricional/dl_list.rb	Thu, 29 Nov 2018 19:24:56 +0000
-./lib/tdd_info_nutricional/tdd_codigo.rb	Mon, 03 Dec 2018 17:32:51 +0000
-./lib/tdd_info_nutricional/dl_list	Thu, 29 Nov 2018 19:35:09 +0000
-./lib/tdd_info_nutricional/version.rb	Mon, 05 Nov 2018 12:46:00 +0000
-./lib/tdd_info_nutricional/paciente.rb	Fri, 23 Nov 2018 23:54:54 +0000
+Wed, 05 Dec 2018 13:05:25 +0000
+./lib/tdd_info_nutricional.rb	Tue, 04 Dec 2018 11:48:37 +0000
+./lib/tdd_info_nutricional/persona.rb	Tue, 04 Dec 2018 18:29:38 +0000
+./lib/tdd_info_nutricional/dl_list_prct9.rb	Wed, 05 Dec 2018 10:10:37 +0000
+./lib/tdd_info_nutricional/dl_list.rb	Mon, 03 Dec 2018 18:08:42 +0000
+./lib/tdd_info_nutricional/tdd_codigo.rb	Wed, 05 Dec 2018 10:10:12 +0000
+./lib/tdd_info_nutricional/version.rb	Mon, 03 Dec 2018 18:32:38 +0000
+./lib/tdd_info_nutricional/persona_datos_antro.rb	Wed, 05 Dec 2018 10:07:25 +0000
+./lib/tdd_info_nutricional/paciente.rb	Wed, 05 Dec 2018 10:25:34 +0000
 ./Gemfile	Thu, 15 Nov 2018 20:07:54 +0000
 ./Guardfile	Fri, 23 Nov 2018 23:54:54 +0000
-./README.md	Thu, 29 Nov 2018 19:42:36 +0000
-./tdd_info_nutricional.gemspec	Thu, 29 Nov 2018 19:51:34 +0000
-./:Wqwq	Sat, 01 Dec 2018 20:40:10 +0000
+./README.md	Mon, 03 Dec 2018 20:06:45 +0000
+./tdd_info_nutricional.gemspec	Mon, 03 Dec 2018 18:32:26 +0000
 ./Gemfile.lock	Fri, 23 Nov 2018 23:54:54 +0000
 ./bin/setup	Mon, 05 Nov 2018 11:51:23 +0000
 ./bin/console	Thu, 15 Nov 2018 20:53:30 +0000
 ./Rakefile	Thu, 15 Nov 2018 20:53:07 +0000
-./spec/tdd_info_nutricional_spec.rb	Mon, 03 Dec 2018 17:24:45 +0000
+./spec/tdd_info_nutricional_spec.rb	Wed, 05 Dec 2018 12:38:03 +0000
 ./spec/spec_helper.rb	Thu, 15 Nov 2018 20:08:19 +0000

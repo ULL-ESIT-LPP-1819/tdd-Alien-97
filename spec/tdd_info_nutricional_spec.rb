@@ -79,7 +79,7 @@ RSpec.describe Tdd_valor_nutricional do
 	@lista= Dll.new()
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
-	
+	@lista_pacientes = Dll.new()
 	@persona1 = Persona_datos_antro.new(97,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20")
 	@persona2 = Persona_datos_antro.new(124,1.86,33,57,88,"18:45","Sí","No",[33, 22 ,23],[26, 30, 24],[9, 7, 6],[10, 4, 6],"24")
 	@persona3 = Persona_datos_antro.new(130,1.77,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29")
@@ -159,16 +159,39 @@ RSpec.describe Tdd_valor_nutricional do
 
    describe "prueba11"do
       it"lista: insertando primer paciente"do
-	@lista.insert_tail(@paciente1)
-	expect(@lista.tail.value).to eq(@paciente1)
+	
+	@lista_pacientes.insert_tail(@paciente1)
+	expect(@lista_pacientes.tail.value).to eq(@paciente1)
       end
       it"lista: insertando segundo paciente"do
-	@lista.insert_tail(@paciente2)
-	expect(@lista.tail.value).to eq(@paciente2)
+	@lista_pacientes.insert_tail(@paciente2)
+	expect(@lista_pacientes.tail.value).to eq(@paciente2)
       end
       it"lista: insertando tercer paciente"do
-	@lista.insert_tail(@paciente3)
-	expect(@lista.tail.value).to eq(@paciente3)
+	@lista_pacientes.insert_tail(@paciente3)
+	expect(@lista_pacientes.tail.value).to eq(@paciente3)
+      end
+      
+      
+      
+   end
+   
+   describe "prueba12: modulo Enumerable"do
+      it"maximo"do
+	expect(@lista_pacientes.max).to eq(@paciente3)
+
+      end
+	
+      it"minimo"do
+	expect(@lista_pacientes.min).to eq(@paciente1)
+      end
+      
+      it"sort"do
+	expect(@lista_pacientes.sort).to eq([@paciente1,@paciente2,@paciente3])
+      end
+      
+      it"collect"do
+	expect(@lista_pacientes.collect{|x| x.imc_value}).to eq([29.94,35.84,41.5])
       end
    end
 
