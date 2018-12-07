@@ -16,7 +16,8 @@ class Paciente < Persona
                   elsif
                           false
                   end
-          end
+        end
+
 	def clasifica_obesidad
 		if !datos_antro.nil?
 			@imc_value=@datos_antro.imc
