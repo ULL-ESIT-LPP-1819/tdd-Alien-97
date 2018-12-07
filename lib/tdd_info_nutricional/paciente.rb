@@ -1,5 +1,5 @@
 class Paciente < Persona
-	attr_accessor :datos_antro,:imc_value,:nombre
+	attr_accessor :datos_antro,:imc_value,:nombre #documentando, datos_antro objeto de otra clase que contiene los datos de salud del paciente
         include Comparable, Enumerable	
 	def initialize(nombre,datos_antro=nil,imc_value=nil) #Ruby, como en otros lenguajes, las variables por defecto las pones al final 
 		super(nombre)
@@ -18,7 +18,7 @@ class Paciente < Persona
                   end
         end
 
-	def clasifica_obesidad
+	def clasifica_obesidad #metodo que clasifica el la obesidad del paciente segun su imc
 		if !datos_antro.nil?
 			@imc_value=@datos_antro.imc
 			if @imc_value >= 25.00 && @imc_value <30.00	
@@ -33,7 +33,7 @@ class Paciente < Persona
 		end
 	end
 	
-	def <=>(other)
+	def <=>(other) #metodo de comparacion de objetos, son  de gran ayuda los modulos comparable y enumerable
     		return nil unless other.instance_of? Paciente
     		@imc_value <=> other.imc_value #imc_value, sin arroba, porque accedes con el getter del objeto other
   	end
