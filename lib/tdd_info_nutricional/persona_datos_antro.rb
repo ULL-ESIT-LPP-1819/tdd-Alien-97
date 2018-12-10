@@ -1,9 +1,9 @@
 	
 class Persona_datos_antro
-	attr_reader:peso, :estatura, :edad,:cintura,:cadera,:hora, :en_ropa_interior, :sin_zapatos, :brazo,:tricipital,:bicipital,:subescapular,:suprailiaco,:brazo
+	attr_reader:peso, :estatura, :edad,:cintura,:cadera,:hora, :en_ropa_interior, :sin_zapatos, :brazo,:tricipital,:bicipital,:subescapular,:suprailiaco,:brazo,:sexo
 
-	def initialize(peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos, tricipital,bicipital,subescapular,suprailiaco,brazo)
-		@peso,@estatura,@edad,@cintura,@cadera,@hora,@en_ropa_interior, @sin_zapatos,@tricipital,@bicipital,@subescapular,@suprailiaco,@brazo=peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos,tricipital,bicipital,subescapular,suprailiaco,brazo
+	def initialize(peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos, tricipital,bicipital,subescapular,suprailiaco,brazo,sexo)
+		@peso,@estatura,@edad,@cintura,@cadera,@hora,@en_ropa_interior, @sin_zapatos,@tricipital,@bicipital,@subescapular,@suprailiaco,@brazo,@sexo=peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos,tricipital,bicipital,subescapular,suprailiaco,brazo,sexo
 	end
 
 	def imc
@@ -70,7 +70,19 @@ class Persona_datos_antro
 		
 		
 	end
+
+
+	def
 	
+	def gasto_energetico_basal
+		if(sexo==hombre)
+			geb_h = ( (10 * peso) + (6.25 * (100* estatura)) -(5 * edad) + 5)
+		elsif(sexo==mujer)
+			geb_m = ( (10* peso) + (6.25 *  (100 * estatura ) ) - (5 * edad) - 161)
+		end
+	
+	end
+	 
         
 
 
