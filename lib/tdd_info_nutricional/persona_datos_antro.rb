@@ -72,12 +72,12 @@ class Persona_datos_antro
 	end
 
 
-	def
+	
 	
 	def gasto_energetico_basal
-		if(sexo==hombre)
+		if(sexo=="Hombre")
 			geb_h = ( (10 * peso) + (6.25 * (100* estatura)) -(5 * edad) + 5)
-		elsif(sexo==mujer)
+		elsif(sexo=="Mujer")
 			geb_m = ( (10* peso) + (6.25 *  (100 * estatura ) ) - (5 * edad) - 161)
 		end
 	

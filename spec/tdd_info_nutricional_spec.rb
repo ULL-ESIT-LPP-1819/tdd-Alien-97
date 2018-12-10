@@ -247,7 +247,7 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
      end
      
      it" gasto energetico basal"do
-	expect(@persona1.gasto_energetico_basal).to eq(2200)
+	expect(@persona1.gasto_energetico_basal).to eq(2000.00)
      end
    end
 	
