@@ -1,3 +1,4 @@
+
 RSpec.describe TddInfoNutricional do
   it "has a version number" do
     expect(TddInfoNutricional::VERSION).not_to be nil
@@ -239,6 +240,13 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
 	expect(@lista_pacientes.collect{|x| x.imc_value}).to eq([29.94,35.84,41.5])
       end
    end
+
+   describe "primeras pruebas practica10"do
+     it"peso teorico ideal"do
+	expect(@persona1.peso_teorico_ideal).to eq(72.50)
+     end
+   end
+	
 
 	
 end

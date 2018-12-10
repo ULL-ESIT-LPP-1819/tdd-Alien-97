@@ -61,6 +61,12 @@ class Persona_datos_antro
 		
 	end
 	
+	def peso_teorico_ideal
+		puts ( ( ((talla -150) * 0.75) +50).round(2))
+		puts pti
+		
+	end
+	
         
 
 
