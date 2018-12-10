@@ -62,8 +62,12 @@ class Persona_datos_antro
 	end
 	
 	def peso_teorico_ideal
-		puts ( ( ((talla -150) * 0.75) +50).round(2))
-		puts pti
+		pti= ( ( (( (estatura*100) -150) * 0.75) +50).round(2))
+		
+		#puts pti.to_s
+		#return pti
+		#ten cuidado con poner puts como ultima operacion, porque devuelve nil, y si el puts es la ultima operacion, el expec va a dar error,  porque se evalua expec(lo que quieres).to eq(nil)
+		
 		
 	end
 	
