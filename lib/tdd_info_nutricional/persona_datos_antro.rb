@@ -1,9 +1,9 @@
 	
 class Persona_datos_antro
-	attr_reader:peso, :estatura, :edad,:cintura,:cadera,:hora, :en_ropa_interior, :sin_zapatos, :brazo,:tricipital,:bicipital,:subescapular,:suprailiaco,:brazo,:sexo
+	attr_reader:peso, :estatura, :edad,:cintura,:cadera,:hora, :en_ropa_interior, :sin_zapatos, :brazo,:tricipital,:bicipital,:subescapular,:suprailiaco,:brazo,:sexo,:faf
 
-	def initialize(peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos, tricipital,bicipital,subescapular,suprailiaco,brazo,sexo)
-		@peso,@estatura,@edad,@cintura,@cadera,@hora,@en_ropa_interior, @sin_zapatos,@tricipital,@bicipital,@subescapular,@suprailiaco,@brazo,@sexo=peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos,tricipital,bicipital,subescapular,suprailiaco,brazo,sexo
+	def initialize(peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos, tricipital,bicipital,subescapular,suprailiaco,brazo,sexo,faf)
+		@peso,@estatura,@edad,@cintura,@cadera,@hora,@en_ropa_interior, @sin_zapatos,@tricipital,@bicipital,@subescapular,@suprailiaco,@brazo,@sexo,@faf=peso,estatura,edad,cintura,cadera,hora,en_ropa_interior,sin_zapatos,tricipital,bicipital,subescapular,suprailiaco,brazo,sexo,faf
 	end
 
 	def imc
@@ -82,7 +82,21 @@ class Persona_datos_antro
 		end
 	
 	end
-	 
+
+	def efecto_termogeno
+		et = (gasto_energetico_basal() * 0.10)
+	end
+	
+	def gasto_actividad_fisica
+		
+		gaf = gasto_energetico_basal()*faf
+		
+	end
+	
+	def gasto_energetico_total
+		get = gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
+	end 
+
         
 
 
