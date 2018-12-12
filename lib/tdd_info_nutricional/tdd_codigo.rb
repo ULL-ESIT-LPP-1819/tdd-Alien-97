@@ -25,7 +25,8 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
 			result+=(v1[i]*v2[i])
 			i+=1 #asi se incrementan iteradores en ruby
 		end
-		"El valor energetico en kilocalorias es #{result}"# info: operador concatenacion en Ruby es +, para que imprima varios strings
+		return result
+		#"El valor energetico en kilocalorias es #{result}"# info: operador concatenacion en Ruby es +, para que imprima varios strings
 		#PUTS DEVUELVE NIL,CUIDADO
 
 	end

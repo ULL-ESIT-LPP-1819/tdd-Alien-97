@@ -51,7 +51,7 @@ RSpec.describe Tdd_valor_nutricional do
     end
 
     it "prueba primer metodo"do
-	   expect(@producto1.valor_energetico_kcal).to eq("El valor energetico en kilocalorias es 2946")
+	   expect(@producto1.valor_energetico_kcal).to eq(2946)
     end
   end
 
@@ -276,7 +276,7 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
      it "dieta" do
 	acc = 0
 	@vec_dieta.each{|x| acc+= x.valor_energetico_kcal}
-	expect(@vec_pacientes.select{|x| x.gasto_energetico_total < acc * 1.1 && x.gasto_energetico_total >  acc * 0.9}).to eq([@paciente1,@paciente3,@paciente4])
+	expect(@vec_pacientes.select{|x| x.gasto_energetico_total < acc * 1.1 && x.gasto_energetico_total >  acc * 0.9}).to eq([])
      end
    end
 	
