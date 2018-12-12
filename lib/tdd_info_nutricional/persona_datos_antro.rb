@@ -61,41 +61,6 @@ class Persona_datos_antro
 		
 	end
 	
-	def peso_teorico_ideal
-		pti= ( ( (( (estatura*100) -150) * 0.75) +50).round(2))
-		
-		#puts pti.to_s
-		#return pti
-		#ten cuidado con poner puts como ultima operacion, porque devuelve nil, y si el puts es la ultima operacion, el expec va a dar error,  porque se evalua expec(lo que quieres).to eq(nil)
-		
-		
-	end
-
-
-	
-	
-	def gasto_energetico_basal
-		if(sexo=="Hombre")
-			geb_h = ( (10 * peso) + (6.25 * (100* estatura)) -(5 * edad) + 5)
-		elsif(sexo=="Mujer")
-			geb_m = ( (10* peso) + (6.25 *  (100 * estatura ) ) - (5 * edad) - 161)
-		end
-	
-	end
-
-	def efecto_termogeno
-		et = (gasto_energetico_basal() * 0.10)
-	end
-	
-	def gasto_actividad_fisica
-		
-		gaf = gasto_energetico_basal()*faf
-		
-	end
-	
-	def gasto_energetico_total
-		get = gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
-	end 
 
         
 

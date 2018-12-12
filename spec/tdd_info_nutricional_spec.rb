@@ -13,7 +13,7 @@ end
 #no puede haber mas de un RSpec en describe's anidados, puedes tener varios describe's mientras sean independientes
 RSpec.describe Tdd_valor_nutricional do
   before:each do
-    @producto1=Tdd_valor_nutricional.new(50 ,10 , 5 , 1 , 3)
+    @producto1=Tdd_valor_nutricional.new(300,50 ,10 , 5 , 1 , 3)
   end
 
 
@@ -21,43 +21,43 @@ RSpec.describe Tdd_valor_nutricional do
   #el it va dentro de otro describe, y ahi es donde te salta el error
   describe "le estoy pasando cantidad de grasa " do   
     it "le paso un atributo que no tiene(grasas saturadas) y falla"do
-	   expect(@producto1.g_saturadas).to eq(50 )
+	   expect(@producto1.g_saturadas).to eq(300)
     end
   end
 
   describe "Segunda prueba: le paso un segundo parametro,cantidad de azucares " do
     it "le paso parametro" do
 	   
-	   expect(@producto1.azucares).to eq(10 )
+	   expect(@producto1.azucares).to eq(50 )
     end
   end
   describe "tercer atributo "do
     it "le paso un tercer atributo, las proteinas" do
-	   expect(@producto1.proteinas).to eq(5 )
+	   expect(@producto1.proteinas).to eq(10 )
     end
   end
   
 
   describe "cuarto atributo"do
     it "le paso un cuarto atributo, la sal" do
-	   expect(@producto1.sal).to eq(1 )
+	   expect(@producto1.sal).to eq(5 )
     end
   end
 
   describe " Prueba para el metodo de calculo del valor energetico"do
     it "le paso fibra alimentaria" do
            
-           expect(@producto1.fib_alimentaria).to eq(3)
+           expect(@producto1.fib_alimentaria).to eq(1)
     end
 
     it "prueba primer metodo"do
-	   expect(@producto1.valor_energetico_kcal).to eq("El valor energetico en kilocalorias es 522")
+	   expect(@producto1.valor_energetico_kcal).to eq("El valor energetico en kilocalorias es 2946")
     end
   end
 
   describe "Prueba para el metodo de calculo del valor energetico en kilojulios"do
     it "valor_nutricional en kj"do
-  	   expect(@producto1.valor_energetico_kj).to eq("El valor energetico en kilojulios es 2152")
+  	   expect(@producto1.valor_energetico_kj).to eq("El valor energetico en kilojulios es 12140")
     end
   end
    
@@ -81,15 +81,22 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
 	@producto3 = Tdd_valor_nutricional.new(10,15,3,6,1)
+	@producto4 = Tdd_valor_nutricional.new(15,7,2,1,4)
+	@producto5 = Tdd_valor_nutricional.new(7,6,9,8,6)
 	@lista_pacientes = Dll.new()
 	@lista_productos = Dll.new()
 	@persona1 = Persona_datos_antro.new(97,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20","Hombre",0.27)
 	@persona2 = Persona_datos_antro.new(124,1.86,33,57,88,"18:45","Sí","No",[33, 22 ,23],[26, 30, 24],[9, 7, 6],[10, 4, 6],"24","Hombre",0.12)
 	@persona3 = Persona_datos_antro.new(130,1.77,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Mujer",0.0)
-	@paciente1 = Paciente.new("Pepe",@persona1)
-	@paciente2 = Paciente.new("Manuel",@persona2)
-	@paciente3 = Paciente.new("Maria",@persona3)
-	
+	@persona4 = Persona_datos_antro.new(102,1.82,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje    r",0.0)
+	@persona5 = Persona_datos_antro.new(112,1.84,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje        r",0.0)
+	@paciente1 = Paciente.new("Pepe",0.12,"Hombre",@persona1)
+	@paciente2 = Paciente.new("Manuel",0.27,"Hombre",@persona2)
+	@paciente3 = Paciente.new("Maria",0.12,"Mujer",@persona3)
+	@paciente4 = Paciente.new("Lola",0.27,"Mujer",@persona4)
+	@paciente5 = Paciente.new("Luisa",0.12,"Mujer",@persona5)
+	@vec_dieta = [@producto1,@producto2,@producto3,@producto4,@producto5]
+	@vec_pacientes = [@paciente1,@paciente2,@paciente3,@paciente4,@paciente5]
   end
   
   describe "prueba1"do
@@ -243,27 +250,33 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
 
    describe "primeras pruebas practica10"do
      it"peso teorico ideal"do
-	expect(@persona1.peso_teorico_ideal).to eq(72.50)
+	expect(@paciente1.peso_teorico_ideal).to eq(72.50)
      end
      
      it" gasto energetico basal, Hombre"do
-	expect(@persona1.gasto_energetico_basal).to eq(2000.00)
+	expect(@paciente1.gasto_energetico_basal).to eq(2000.00)
      end
 
      it"gasto energetico basal, Mujer"do
-	expect(@persona3.gasto_energetico_basal).to eq(2145.25)
+	expect(@paciente3.gasto_energetico_basal).to eq(2145.25)
      end
      
      it "efecto termogeno"do
-	expect(@persona1.efecto_termogeno).to eq(200.00)
+	expect(@paciente1.efecto_termogeno).to eq(200.00)
      end
 	
      it "gasto de actividad fisica"do
-	expect(@persona1.gasto_actividad_fisica).to eq(540.00)
+	expect(@paciente1.gasto_actividad_fisica).to eq(240.00)
      end
 
      it "gasto energetico total"do
-	expect(@persona1.gasto_energetico_total).to eq(2740.00)
+	expect(@paciente1.gasto_energetico_total).to eq(2440.00)
+     end
+
+     it "dieta" do
+	acc = 0
+	@vec_dieta.each{|x| acc+= x.valor_energetico_kcal}
+	expect(@vec_pacientes.select{|x| x.gasto_energetico_total < acc * 1.1 && x.gasto_energetico_total >  acc * 0.9}).to eq([@paciente1,@paciente3,@paciente4])
      end
    end
 	
