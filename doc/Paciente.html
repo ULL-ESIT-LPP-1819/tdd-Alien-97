@@ -94,6 +94,16 @@
     
     <li ><a href="#method-i-clasifica_obesidad">#clasifica_obesidad</a>
     
+    <li ><a href="#method-i-efecto_termogeno">#efecto_termogeno</a>
+    
+    <li ><a href="#method-i-gasto_actividad_fisica">#gasto_actividad_fisica</a>
+    
+    <li ><a href="#method-i-gasto_energetico_basal">#gasto_energetico_basal</a>
+    
+    <li ><a href="#method-i-gasto_energetico_total">#gasto_energetico_total</a>
+    
+    <li ><a href="#method-i-peso_teorico_ideal">#peso_teorico_ideal</a>
+    
   </ul>
 </div>
 
@@ -137,6 +147,19 @@
         </div>
       </div>
       
+      <div id="attribute-i-faf" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">faf</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
       <div id="attribute-i-imc_value" class="method-detail">
         <div class="method-heading attribute-method-heading">
           <span class="method-name">imc_value</span><span
@@ -163,6 +186,19 @@
         </div>
       </div>
       
+      <div id="attribute-i-sexo" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sexo</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
     </section>
     
 
@@ -177,7 +213,7 @@
         
         <div class="method-heading">
           <span class="method-name">new</span><span
-            class="method-args">(nombre,datos_antro=nil,imc_value=nil)</span>
+            class="method-args">(nombre,faf,sexo,datos_antro=nil,imc_value=nil)</span>
           
           <span class="method-click-advice">click to toggle source</span>
           
@@ -198,8 +234,10 @@
           
           <div class="method-source-code" id="new-source">
             <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 4</span>
-<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">datos_antro</span>=<span class="ruby-keyword">nil</span>,<span class="ruby-identifier">imc_value</span>=<span class="ruby-keyword">nil</span>) <span class="ruby-comment">#Ruby, como en otros lenguajes, las variables por defecto las pones al final</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">nombre</span>,<span class="ruby-identifier">faf</span>,<span class="ruby-identifier">sexo</span>,<span class="ruby-identifier">datos_antro</span>=<span class="ruby-keyword">nil</span>,<span class="ruby-identifier">imc_value</span>=<span class="ruby-keyword">nil</span>) <span class="ruby-comment">#Ruby, como en otros lenguajes, las variables por defecto las pones al final</span>
         <span class="ruby-keyword">super</span>(<span class="ruby-identifier">nombre</span>)
+        <span class="ruby-ivar">@faf</span>=<span class="ruby-identifier">faf</span>
+        <span class="ruby-ivar">@sexo</span>=<span class="ruby-identifier">sexo</span>
         <span class="ruby-ivar">@datos_antro</span>=<span class="ruby-identifier">datos_antro</span>
         <span class="ruby-ivar">@imc_value</span>=<span class="ruby-identifier">imc_value</span>
                         
@@ -243,7 +281,7 @@
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 36</span>
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 38</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>) <span class="ruby-comment">#metodo de comparacion de objetos, son  de gran ayuda los modulos comparable y enumerable</span>
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Paciente</span>
         <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">imc_value</span> <span class="ruby-comment">#imc_value, sin arroba, porque accedes con el getter del objeto other</span>
@@ -277,7 +315,7 @@
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 13</span>
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 15</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span> (<span class="ruby-identifier">other</span>)
           <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Paciente</span>
                 <span class="ruby-ivar">@imc_value</span>=<span class="ruby-identifier">other</span>.<span class="ruby-identifier">imc_value</span>
@@ -314,7 +352,7 @@
 
           
           <div class="method-source-code" id="clasifica_obesidad-source">
-            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 21</span>
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 23</span>
         <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">clasifica_obesidad</span> <span class="ruby-comment">#metodo que clasifica el la obesidad del paciente segun su imc</span>
                 <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">nil?</span>
                         <span class="ruby-ivar">@imc_value</span>=<span class="ruby-ivar">@datos_antro</span>.<span class="ruby-identifier">imc</span>
@@ -335,7 +373,229 @@
                 <span class="ruby-ivar">@imc_value</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">imc_value</span> <span class="ruby-comment">#imc_value, sin arroba, porque accedes con el getter del objeto other</span>
         <span class="ruby-keyword">end</span>
 
+        <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peso_teorico_ideal</span>
+                 <span class="ruby-identifier">pti</span>= ( ( (( (<span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">estatura</span><span class="ruby-operator">*</span><span class="ruby-value">100</span>) <span class="ruby-value">-150</span>) <span class="ruby-operator">*</span> <span class="ruby-value">0.75</span>) <span class="ruby-value">+50</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>))
+  
+                  <span class="ruby-comment">#puts pti.to_s</span>
+                  <span class="ruby-comment">#return pti</span>
+                  <span class="ruby-comment">#ten cuidado con poner puts como ultima operacion, porque devuelve nil, y si el puts es la ultima operacion, el expec va a     dar error,  porque se evalua expec(lo que quieres).to eq(nil)</span>
+  
+  
+          <span class="ruby-keyword">end</span>
+  
+  
+  
+  
+          <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gasto_energetico_basal</span>
+                <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">nil?</span>
+                  <span class="ruby-keyword">if</span>(<span class="ruby-identifier">sexo</span><span class="ruby-operator">==</span><span class="ruby-string">&quot;Hombre&quot;</span>)
+                          <span class="ruby-identifier">geb_h</span> = ( (<span class="ruby-value">10</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">peso</span>) <span class="ruby-operator">+</span> (<span class="ruby-value">6.25</span> <span class="ruby-operator">*</span> (<span class="ruby-value">100</span><span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">estatura</span>)) <span class="ruby-operator">-</span>(<span class="ruby-value">5</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">edad</span>) <span class="ruby-operator">+</span> <span class="ruby-value">5</span>)
+                  <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">sexo</span><span class="ruby-operator">==</span><span class="ruby-string">&quot;Mujer&quot;</span>)
+                          <span class="ruby-identifier">geb_m</span> = ( (<span class="ruby-value">10</span><span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">peso</span>) <span class="ruby-operator">+</span> (<span class="ruby-value">6.25</span> <span class="ruby-operator">*</span>  (<span class="ruby-value">100</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">estatura</span> ) ) <span class="ruby-operator">-</span> (<span class="ruby-value">5</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">edad</span>) <span class="ruby-operator">-</span> <span class="ruby-value">161</span>)
+                  <span class="ruby-keyword">end</span>
+                <span class="ruby-keyword">end</span>
+  
+          <span class="ruby-keyword">end</span>
+  
+          <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">efecto_termogeno</span>
+                  <span class="ruby-identifier">et</span> = (<span class="ruby-identifier">gasto_energetico_basal</span>() <span class="ruby-operator">*</span> <span class="ruby-value">0.10</span>)
+          <span class="ruby-keyword">end</span>
+  
+          <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gasto_actividad_fisica</span>
+  
+                  <span class="ruby-identifier">gaf</span> = <span class="ruby-identifier">gasto_energetico_basal</span>()<span class="ruby-operator">*</span><span class="ruby-identifier">faf</span>
+  
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gasto_energetico_total</span>
+                 <span class="ruby-identifier">get</span> = <span class="ruby-identifier">gasto_energetico_basal</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">efecto_termogeno</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">gasto_actividad_fisica</span>
+          <span class="ruby-keyword">end</span>
+          
+
+
+
+
 <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-efecto_termogeno" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">efecto_termogeno</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="efecto_termogeno-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">efecto_termogeno</span>
+        <span class="ruby-identifier">et</span> = (<span class="ruby-identifier">gasto_energetico_basal</span>() <span class="ruby-operator">*</span> <span class="ruby-value">0.10</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gasto_actividad_fisica" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gasto_actividad_fisica</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gasto_actividad_fisica-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gasto_actividad_fisica</span>
+  
+        <span class="ruby-identifier">gaf</span> = <span class="ruby-identifier">gasto_energetico_basal</span>()<span class="ruby-operator">*</span><span class="ruby-identifier">faf</span>
+  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gasto_energetico_basal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gasto_energetico_basal</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gasto_energetico_basal-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gasto_energetico_basal</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-keyword">if</span>(<span class="ruby-identifier">sexo</span><span class="ruby-operator">==</span><span class="ruby-string">&quot;Hombre&quot;</span>)
+                <span class="ruby-identifier">geb_h</span> = ( (<span class="ruby-value">10</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">peso</span>) <span class="ruby-operator">+</span> (<span class="ruby-value">6.25</span> <span class="ruby-operator">*</span> (<span class="ruby-value">100</span><span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">estatura</span>)) <span class="ruby-operator">-</span>(<span class="ruby-value">5</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">edad</span>) <span class="ruby-operator">+</span> <span class="ruby-value">5</span>)
+        <span class="ruby-keyword">elsif</span>(<span class="ruby-identifier">sexo</span><span class="ruby-operator">==</span><span class="ruby-string">&quot;Mujer&quot;</span>)
+                <span class="ruby-identifier">geb_m</span> = ( (<span class="ruby-value">10</span><span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">peso</span>) <span class="ruby-operator">+</span> (<span class="ruby-value">6.25</span> <span class="ruby-operator">*</span>  (<span class="ruby-value">100</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">estatura</span> ) ) <span class="ruby-operator">-</span> (<span class="ruby-value">5</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">edad</span>) <span class="ruby-operator">-</span> <span class="ruby-value">161</span>)
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+  
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-gasto_energetico_total" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">gasto_energetico_total</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="gasto_energetico_total-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">gasto_energetico_total</span>
+       <span class="ruby-identifier">get</span> = <span class="ruby-identifier">gasto_energetico_basal</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">efecto_termogeno</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">gasto_actividad_fisica</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-peso_teorico_ideal" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">peso_teorico_ideal</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="peso_teorico_ideal-source">
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/paciente.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">peso_teorico_ideal</span>
+         <span class="ruby-identifier">pti</span>= ( ( (( (<span class="ruby-identifier">datos_antro</span>.<span class="ruby-identifier">estatura</span><span class="ruby-operator">*</span><span class="ruby-value">100</span>) <span class="ruby-value">-150</span>) <span class="ruby-operator">*</span> <span class="ruby-value">0.75</span>) <span class="ruby-value">+50</span>).<span class="ruby-identifier">round</span>(<span class="ruby-value">2</span>))
+  
+          <span class="ruby-comment">#puts pti.to_s</span>
+          <span class="ruby-comment">#return pti</span>
+          <span class="ruby-comment">#ten cuidado con poner puts como ultima operacion, porque devuelve nil, y si el puts es la ultima operacion, el expec va a     dar error,  porque se evalua expec(lo que quieres).to eq(nil)</span>
+  
+  
+  <span class="ruby-keyword">end</span></pre>
           </div>
           
         </div>

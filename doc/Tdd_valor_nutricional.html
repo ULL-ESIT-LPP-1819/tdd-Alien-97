@@ -337,7 +337,7 @@
 
           
           <div class="method-source-code" id="3C-3D-3E-source">
-            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/tdd_codigo.rb, line 63</span>
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/tdd_codigo.rb, line 64</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span> (<span class="ruby-identifier">other</span>) <span class="ruby-comment">#usando metodos modulo comparable</span>
         <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span><span class="ruby-constant">Tdd_valor_nutricional</span>
                 <span class="ruby-ivar">@azucares</span> <span class="ruby-operator">&lt;=&gt;</span><span class="ruby-identifier">other</span>.<span class="ruby-identifier">azucares</span>
@@ -371,7 +371,7 @@
 
           
           <div class="method-source-code" id="3D-3D-source">
-            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/tdd_codigo.rb, line 46</span>
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/tdd_codigo.rb, line 47</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span> (<span class="ruby-identifier">other</span>)
         <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">instance_of?</span> <span class="ruby-constant">Tdd_valor_nutricional</span>
                 <span class="ruby-comment">#@g_saturadas == other.g_saturadas</span>
@@ -427,7 +427,8 @@
                 <span class="ruby-identifier">result</span><span class="ruby-operator">+=</span>(<span class="ruby-identifier">v1</span>[<span class="ruby-identifier">i</span>]<span class="ruby-operator">*</span><span class="ruby-identifier">v2</span>[<span class="ruby-identifier">i</span>])
                 <span class="ruby-identifier">i</span><span class="ruby-operator">+=</span><span class="ruby-value">1</span> <span class="ruby-comment">#asi se incrementan iteradores en ruby</span>
         <span class="ruby-keyword">end</span>
-        <span class="ruby-node">&quot;El valor energetico en kilocalorias es #{result}&quot;</span><span class="ruby-comment"># info: operador concatenacion en Ruby es +, para que imprima varios strings</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+        <span class="ruby-comment">#&quot;El valor energetico en kilocalorias es #{result}&quot;# info: operador concatenacion en Ruby es +, para que imprima varios strings</span>
         <span class="ruby-comment">#PUTS DEVUELVE NIL,CUIDADO</span>
 
 <span class="ruby-keyword">end</span></pre>
@@ -460,7 +461,7 @@
 
           
           <div class="method-source-code" id="valor_energetico_kj-source">
-            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/tdd_codigo.rb, line 32</span>
+            <pre><span class="ruby-comment"># File lib/tdd_info_nutricional/tdd_codigo.rb, line 33</span>
 <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">valor_energetico_kj</span>()
         <span class="ruby-identifier">v1</span>=[<span class="ruby-ivar">@g_saturadas</span>,<span class="ruby-ivar">@azucares</span>,<span class="ruby-ivar">@proteinas</span>,<span class="ruby-ivar">@sal</span>, <span class="ruby-ivar">@fib_alimentaria</span>]
         <span class="ruby-identifier">v2</span>=[<span class="ruby-value">37</span>,<span class="ruby-value">17</span>,<span class="ruby-value">8</span>,<span class="ruby-value">17</span>,<span class="ruby-value">25</span>]
