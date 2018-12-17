@@ -77,8 +77,11 @@ class Paciente < Persona
 	  def gasto_energetico_total
                  get = gasto_energetico_basal + efecto_termogeno + gasto_actividad_fisica
           end
-	  
 
+	  def ordena(vec, sentinel)
+		if(sentinel >= 0 && sentinel < vec.size)
+	  	end
+	  end
 
 
 

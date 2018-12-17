@@ -83,8 +83,14 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
 	@producto3 = Tdd_valor_nutricional.new(10,15,3,6,1)
 	@producto4 = Tdd_valor_nutricional.new(15,7,2,1,4)
 	@producto5 = Tdd_valor_nutricional.new(7,6,9,8,6)
+	@producto6 = Tdd_valor_nutricional.new(4,8,11,0,0)
+	@producto7 = Tdd_valor_nutricional.new(9,10,11,2,5)
+	@producto8 = Tdd_valor_nutricional.new(2,3,4,5,6)
+	@producto9 = Tdd_valor_nutricional.new(9,10,5,7,2)
+	@producto10 = Tdd_valor_nutricional.new(10,9,7,6,1.5)
 	@lista_pacientes = Dll.new()
 	@lista_productos = Dll.new()
+	
 	@persona1 = Persona_datos_antro.new(97,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20","Hombre",0.27)
 	@persona2 = Persona_datos_antro.new(124,1.86,33,57,88,"18:45","Sí","No",[33, 22 ,23],[26, 30, 24],[9, 7, 6],[10, 4, 6],"24","Hombre",0.12)
 	@persona3 = Persona_datos_antro.new(130,1.77,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Mujer",0.0)
@@ -95,8 +101,19 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
 	@paciente3 = Paciente.new("Maria",0.12,"Mujer",@persona3)
 	@paciente4 = Paciente.new("Lola",0.27,"Mujer",@persona4)
 	@paciente5 = Paciente.new("Luisa",0.12,"Mujer",@persona5)
-	@vec_dieta = [@producto1,@producto2,@producto3,@producto4,@producto5]
+	@vec_dieta1 = [@producto1,@producto2,@producto3,@producto4,@producto5]
+	@vec_dieta2 = [@producto2,@producto3,@producto5]
+	@vec_dieta3 = [@producto4,@producto6,@producto7]
+	@vec_dieta4 = [@producto1,@producto2,@producto3,@producto7,@producto9]
+	@vec_dieta5 = [@producto5,@producto6,@producto7,@producto8,@producto9,@producto10]
+	@vec_dieta6 = [@producto4,@producto6,@producto2,@producto7,@producto9]
+        @vec_dieta7 = [@producto4,@producto5,@producto6]
+        @vec_dieta8 = [@producto8,@producto9,@producto10]
+        @vec_dieta9 = [@producto9,@producto8,@producto1,@producto2,@producto10]
+        @vec_dieta10 = [@producto5,@producto6,@producto7,@producto8,@producto9,@producto10]
+	@vec_dietas = [@vec_dieta1,@vec_dieta2,@vec_dieta3,@vec_dieta4,@vec_dieta5,@vec_dieta6,@vec_dieta7,@vec_dieta8,@vec_dieta9,@vec_dieta10]
 	@vec_pacientes = [@paciente1,@paciente2,@paciente3,@paciente4,@paciente5]
+	
   end
   
   describe "prueba1"do
@@ -275,11 +292,29 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
 
      it "dieta" do
 	acc = 0
-	@vec_dieta.each{|x| acc+= x.valor_energetico_kcal}
+	@vec_dieta1.each{|x| acc+= x.valor_energetico_kcal}
 	expect(@vec_pacientes.select{|x| x.gasto_energetico_total < acc * 1.1 && x.gasto_energetico_total >  acc * 0.9}).to eq([])
      end
+     
+    end
+	
+   describe"Pruebas prct11"do
+     it"vector dieta, primer elemento"do   
+       expect(@vec_dietas[0]).to eq(@vec_dieta1)
+     end
+     
+     it"vector dieta, ultimo elemento"do
+       expect(@vec_dietas.last).to eq(@vec_dieta10)
+     end
    end
+   
+	
+	
+	 
+   end
+   
+   
 	
 
 	
-end
+
