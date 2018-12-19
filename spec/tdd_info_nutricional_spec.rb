@@ -75,9 +75,10 @@ RSpec.describe Double_linked_list do
    end
   
 end
-RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
+RSpec.describe Tdd_valor_nutricional do 
   before:all do
 	@lista= Dll.new()
+	
 	@producto1 = Tdd_valor_nutricional.new(10,8,7,6,5)
 	@producto2 = Tdd_valor_nutricional.new(10,4,2,1,4)
 	@producto3 = Tdd_valor_nutricional.new(10,15,3,6,1)
@@ -305,6 +306,11 @@ RSpec.describe Tdd_valor_nutricional do #PRUEBAS PRCT9
      
      it"vector dieta, ultimo elemento"do
        expect(@vec_dietas.last).to eq(@vec_dieta10)
+     end
+	
+     it"vector dieta, metodo ordenar"do
+	[@vec_dieta1,@vec_dieta2,@vec_dieta3,@vec_dieta4,@vec_dieta5,@vec_dieta6,@vec_dieta7,    @vec_dieta8,@vec_dieta9,@vec_dieta10].each{|x| puts x[0].valor_energetico_kcal_menu(x)}
+	expect(@producto1.ordena(@vec_dietas)).to eq([@vec_dieta8,@vec_dieta3,@vec_dieta2,@vec_dieta7,@vec_dieta9,@vec_dieta6,@vec_dieta4,@vec_dieta1,@vec_dieta5,@vec_dieta10])
      end
    end
    

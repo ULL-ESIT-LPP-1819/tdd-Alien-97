@@ -16,7 +16,7 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
 		@vitamina=vitamina
 	end
 	
-	def valor_energetico_kcal()
+	def valor_energetico_kcal
 		v1=[@g_saturadas,@azucares,@proteinas,@sal, @fib_alimentaria]
 		v2=[9,4,2,4,6]
 		i=0
@@ -25,6 +25,7 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
 			result+=(v1[i]*v2[i])
 			i+=1 #asi se incrementan iteradores en ruby
 		end
+		result.round(2)
 		return result
 		#"El valor energetico en kilocalorias es #{result}"# info: operador concatenacion en Ruby es +, para que imprima varios strings
 		#PUTS DEVUELVE NIL,CUIDADO
@@ -65,6 +66,45 @@ class Tdd_valor_nutricional #attr_reader solo se declaran variables de instancia
       		return nil unless other.instance_of?Tdd_valor_nutricional
          		@azucares <=>other.azucares
     	end
+
+	def valor_energetico_kcal_menu(vec_menu)
+		
+                i=0 
+                
+                result=0 #siempre hay que inicializar variables
+                while  i < vec_menu.size()-1 do 
+			result+=vec_menu[i].valor_energetico_kcal
+			i+=1
+			
+                end
+                result.round(2)
+                return result
+	
+	end
+
+	 def ordena(vec)
+		
+		
+		for i in  (1..(vec.size()-1)) do # si pones 1..(vec.size()... estás referenciando numeros enteros, no posiciones,si pones for i in vec, ahí la i esta referenciando los valores del vector, no posiciones
+			temp=vec[i]
+			
+			j=i -1
+			result1 = valor_energetico_kcal_menu(temp)
+			result2 = valor_energetico_kcal_menu(vec[j])
+                	while j>=0 && result1 < result2 do
+				vec[j+1] = vec[j]
+				j= j-1
+				result2 = valor_energetico_kcal_menu(vec[j])
+		
+			end
+			vec[j+1] = temp
+			
+		end
+		
+		
+		return vec
+                
+         end
 	
 
 end
