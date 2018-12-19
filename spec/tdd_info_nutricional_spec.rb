@@ -91,17 +91,29 @@ RSpec.describe Tdd_valor_nutricional do
 	@producto10 = Tdd_valor_nutricional.new(10,9,7,6,1.5)
 	@lista_pacientes = Dll.new()
 	@lista_productos = Dll.new()
+	@lista_pacientes2 = Dll.new()
 	
 	@persona1 = Persona_datos_antro.new(97,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20","Hombre",0.27)
 	@persona2 = Persona_datos_antro.new(124,1.86,33,57,88,"18:45","Sí","No",[33, 22 ,23],[26, 30, 24],[9, 7, 6],[10, 4, 6],"24","Hombre",0.12)
 	@persona3 = Persona_datos_antro.new(130,1.77,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Mujer",0.0)
 	@persona4 = Persona_datos_antro.new(102,1.82,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje    r",0.0)
 	@persona5 = Persona_datos_antro.new(112,1.84,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje        r",0.0)
+	@persona6 = Persona_datos_antro.new(97,1.80,20,22,34,"18:30","Sí","Sí",[11, 14 ,12],[26, 27, 28],[10, 7, 5],[5, 4, 2],"20","Hombre    ",0.27)
+ 96     @persona7 = Persona_datos_antro.new(124,1.86,33,57,88,"18:45","Sí","No",[33, 22 ,23],[26, 30, 24],[9, 7, 6],[10, 4, 6],"24","Hombr    e",0.12)
+ 97     @persona8 = Persona_datos_antro.new(130,1.77,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje    r",0.0)
+ 98     @persona9 = Persona_datos_antro.new(102,1.82,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje        r",0.0)
+ 99     @persona10 = Persona_datos_antro.new(112,1.84,20,25,36,"19:00","No","Sí",[29, 40 ,15],[30, 15, 24],[20, 10, 6],[9, 5, 2],"29","Muje            r",0.0)
 	@paciente1 = Paciente.new("Pepe",0.12,"Hombre",@persona1)
 	@paciente2 = Paciente.new("Manuel",0.27,"Hombre",@persona2)
 	@paciente3 = Paciente.new("Maria",0.12,"Mujer",@persona3)
 	@paciente4 = Paciente.new("Lola",0.27,"Mujer",@persona4)
 	@paciente5 = Paciente.new("Luisa",0.12,"Mujer",@persona5)
+	@paciente6 = Paciente.new("Luis",0.12,"Hombre",@persona1)
+        @paciente7 = Paciente.new("Heraclio",0.12,"Hombre",@persona2)
+        @paciente8 = Paciente.new("Florencia",0.12,"Mujer",@persona3)
+        @paciente9 = Paciente.new("Amina",0.12,"Mujer",@persona4)
+        @paciente10 = Paciente.new("Maruja",0.27,"Mujer",@persona5)
+	
 	@vec_dieta1 = [@producto1,@producto2,@producto3,@producto4,@producto5]
 	@vec_dieta2 = [@producto2,@producto3,@producto5]
 	@vec_dieta3 = [@producto4,@producto6,@producto7]
@@ -125,6 +137,8 @@ RSpec.describe Tdd_valor_nutricional do
 	@menu9 = Menu.new(@vec_dieta9)
 	@menu10 = Menu.new(@vec_dieta10)
 	@vec_menus = [@menu1,@menu2,@menu3,@menu4,@menu5,@menu6,@menu7,@menu8,@menu9,@menu10]
+	
+	@lista_pacientes2 = [@paciente1,@paciente2,@paciente3,@paciente4,@paciente5,@paciente6,@paciente7,@paciente8,@paciente9,@paciente10]
   end
   
   describe "prueba1"do
@@ -326,9 +340,12 @@ RSpec.describe Tdd_valor_nutricional do
      it"vector dieta, sort"do
 	expect(@vec_menus.sort).to eq([@menu8,@menu3,@menu2,@menu7,@menu9,@menu6,@menu4,@menu1,@menu5,@menu10])
      end
+
+     it"lista pacientes, ordenacion por insercion"do
+	expect(@lista_paciente
      
-     it"vector dieta, each"do
-     end
+      
+     
    end
    
 	

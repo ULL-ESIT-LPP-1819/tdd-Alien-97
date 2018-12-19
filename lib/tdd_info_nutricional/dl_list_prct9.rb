@@ -101,6 +101,55 @@
 	end
    end
 
+   def search_list(pos)
+	i=0
+	aux=@head
+
+	while i <  pos do
+		aux = aux.next
+		i+=1
+	
+	end
+
+	if(i==pos)
+		return aux.value
+	end
+	
+	  
+   end
+    
+   def ordena
+  
+  
+                for i in  (1..(@size-1)) do # si pones 1..(vec.size()... estás referenciando numeros enteros, no posiciones,si pones     for i in vec, ahí la i esta referenciando los valores del vector, no posiciones
+                          temp=i
+  
+                          j=i -1
+			  paciente_centinela= search_list(i)
+			  paciente = search_list(j)
+			  
+                          result1 = paciente_centinela.gasto_energetico_total
+                          result2 = paciente.gasto_energetico_total
+                          while j>=0 && result1 < result2 do
+				  ordenando = search_list(j+1)
+                                  nueva_pos = search_list(j)
+				  ordenando = nueva_pos
+                                  j= j-1
+				  paciente = search_list(j)
+                                  result2 = paciente.gasto_energetico_total
+  
+                          end
+			 pos_final = search_list(j+1)
+                         pos_final = paciente_centinela
+ 
+                 end
+ 
+ 
+                 return vec
+ 
+  end
+
+
    
    
 end 
