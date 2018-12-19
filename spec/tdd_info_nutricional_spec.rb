@@ -114,7 +114,17 @@ RSpec.describe Tdd_valor_nutricional do
         @vec_dieta10 = [@producto5,@producto6,@producto7,@producto8,@producto9,@producto10]
 	@vec_dietas = [@vec_dieta1,@vec_dieta2,@vec_dieta3,@vec_dieta4,@vec_dieta5,@vec_dieta6,@vec_dieta7,@vec_dieta8,@vec_dieta9,@vec_dieta10]
 	@vec_pacientes = [@paciente1,@paciente2,@paciente3,@paciente4,@paciente5]
-	
+	@menu1 = Menu.new(@vec_dieta1)
+	@menu2 = Menu.new(@vec_dieta2)
+	@menu3 = Menu.new(@vec_dieta3)
+	@menu4 = Menu.new(@vec_dieta4)
+	@menu5 = Menu.new(@vec_dieta5)
+	@menu6 = Menu.new(@vec_dieta6)
+	@menu7 = Menu.new(@vec_dieta7)
+	@menu8 = Menu.new(@vec_dieta8)
+	@menu9 = Menu.new(@vec_dieta9)
+	@menu10 = Menu.new(@vec_dieta10)
+	@vec_menus = [@menu1,@menu2,@menu3,@menu4,@menu5,@menu6,@menu7,@menu8,@menu9,@menu10]
   end
   
   describe "prueba1"do
@@ -308,9 +318,16 @@ RSpec.describe Tdd_valor_nutricional do
        expect(@vec_dietas.last).to eq(@vec_dieta10)
      end
 	
-     it"vector dieta, metodo ordenar"do
+     it"vector dieta, metodo ordenar por insercion"do
 	[@vec_dieta1,@vec_dieta2,@vec_dieta3,@vec_dieta4,@vec_dieta5,@vec_dieta6,@vec_dieta7,    @vec_dieta8,@vec_dieta9,@vec_dieta10].each{|x| puts x[0].valor_energetico_kcal_menu(x)}
 	expect(@producto1.ordena(@vec_dietas)).to eq([@vec_dieta8,@vec_dieta3,@vec_dieta2,@vec_dieta7,@vec_dieta9,@vec_dieta6,@vec_dieta4,@vec_dieta1,@vec_dieta5,@vec_dieta10])
+     end
+
+     it"vector dieta, sort"do
+	expect(@vec_menus.sort).to eq([@menu8,@menu3,@menu2,@menu7,@menu9,@menu6,@menu4,@menu1,@menu5,@menu10])
+     end
+     
+     it"vector dieta, each"do
      end
    end
    

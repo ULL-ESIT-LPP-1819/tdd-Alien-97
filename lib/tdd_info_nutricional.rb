@@ -5,6 +5,7 @@ require "tdd_info_nutricional/dl_list_prct9.rb"
 require "tdd_info_nutricional/persona.rb"
 require "tdd_info_nutricional/paciente.rb"
 require "tdd_info_nutricional/persona_datos_antro.rb"
+require "tdd_info_nutricional/menu.rb"
 module TddInfoNutricional
   # Your code goes here...
 end
